@@ -47,4 +47,3 @@ jobs:
           command: |
             docker push angulartest.azurecr.io/angular-cli-nginx:1.0
 
-
