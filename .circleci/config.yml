@@ -39,11 +39,11 @@ jobs:
       - run: yarn ng build --prod --no-progress
       - run:
           command: |
-            docker build -t angulartest.azurecr.io/angular-cli-nginx:1.0 .
+            docker build -t angulartest.azurecr.io/angular-cli-nginx:$CIRCLE_SHA1 .
       - run:
           command: |
             docker login --username $DOCKER_USER --password $DOCKER_PASS angulartest.azurecr.io
       - run:
           command: |
-            docker push angulartest.azurecr.io/angular-cli-nginx:1.0
+            docker push angulartest.azurecr.io/angular-cli-nginx:$CIRCLE_SHA1
 
